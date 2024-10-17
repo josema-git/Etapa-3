@@ -1,0 +1,1177 @@
+# Capítulo 1: Introducción a C++
+
+## Historia y evolución de C++
+
+C++ fue creado por Bjarne Stroustrup en 1979 como una extensión del lenguaje C. Inicialmente se llamó "C con clases", pero en 1983 se renombró a C++. El lenguaje se diseñó para añadir características de la programación orientada a objetos al ya poderoso y eficiente lenguaje C.
+
+## Características principales de C++
+
+1. **Multiparadigma**: Soporta programación estructurada, orientada a objetos y genérica.
+2. **Compilado**: Se traduce directamente a código máquina, lo que lo hace muy eficiente.
+3. **Fuertemente tipado**: Requiere declaración explícita de tipos de variables.
+4. **Portabilidad**: El código puede compilarse en diferentes plataformas con mínimas modificaciones.
+5. **Biblioteca estándar**: Proporciona una amplia gama de funciones y clases predefinidas.
+
+## Entorno de desarrollo
+
+Para programar en C++, se necesita:
+
+1. **Compilador**: GCC, Clang, o Visual C++ son opciones populares.
+2. **IDE (Entorno de Desarrollo Integrado)**: Como Visual Studio, Code::Blocks, o CLion.
+3. **Editor de texto**: Alternativa más ligera a un IDE, como Sublime Text o Visual Studio Code.
+
+## Estructura básica de un programa en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hola, mundo!" << endl;
+    return 0;
+}
+```
+
+- `#include <iostream>`: Incluye la biblioteca para entrada/salida estándar.
+- `using namespace std;`: Permite usar elementos del espacio de nombres estándar sin prefijo.
+- `int main()`: Función principal donde comienza la ejecución del programa.
+- `cout`: Objeto para la salida estándar.
+- `return 0;`: Indica que el programa terminó correctamente.
+
+## Compilación y ejecución
+
+1. Guardar el código en un archivo con extensión `.cpp`.
+2. Compilar el programa (por ejemplo, con GCC: `g++ programa.cpp -o programa`).
+3. Ejecutar el programa resultante.
+
+## Comentarios en C++
+
+- Comentarios de una línea: `// Esto es un comentario`
+- Comentarios de múltiples líneas: 
+  ```cpp
+  /* Esto es un
+     comentario de
+     varias líneas */
+  ```
+
+# Capítulo 2: Tipos de Datos y Variables
+
+## Tipos de datos fundamentales
+
+1. **Enteros**:
+   - `int`: Números enteros (generalmente 4 bytes)
+   - `short`: Enteros cortos (generalmente 2 bytes)
+   - `long`: Enteros largos (generalmente 4 u 8 bytes)
+   - `long long`: Enteros extra largos (generalmente 8 bytes)
+
+2. **Punto flotante**:
+   - `float`: Precisión simple (4 bytes)
+   - `double`: Precisión doble (8 bytes)
+   - `long double`: Precisión extendida (generalmente 10 o 16 bytes)
+
+3. **Caracteres**:
+   - `char`: Un solo carácter (1 byte)
+
+4. **Booleanos**:
+   - `bool`: Verdadero (`true`) o falso (`false`)
+
+## Modificadores de tipos
+
+- `signed`: Para números con signo (positivos y negativos)
+- `unsigned`: Solo para números positivos
+- `const`: Para declarar constantes
+
+## Declaración de variables
+
+Sintaxis: `tipo nombre_variable;`
+
+Ejemplos:
+```cpp
+int edad;
+float precio;
+char letra;
+bool esVerdadero;
+```
+
+## Inicialización de variables
+
+```cpp
+int numero = 10;
+float pi = 3.14159;
+char inicial = 'A';
+bool activo = true;
+```
+
+## Ámbito de las variables
+
+- Variables locales: Declaradas dentro de una función o bloque
+- Variables globales: Declaradas fuera de todas las funciones
+
+## Conversión de tipos (Casting)
+
+- Implícita: Automática por el compilador
+- Explícita: Forzada por el programador
+  ```cpp
+  int a = 5;
+  float b = (float)a; // Casting explícito
+  ```
+
+## Constantes
+
+- Usando `#define`:
+  ```cpp
+  #define PI 3.14159
+  ```
+- Usando `const`:
+  ```cpp
+  const double PI = 3.14159;
+  ```
+
+## Operadores de asignación
+
+- `=`: Asignación simple
+- `+=`, `-=`, `*=`, `/=`: Asignación con operación
+
+## Entrada y salida básica
+
+- Salida con `cout`:
+  ```cpp
+  cout << "Hola, mundo!" << endl;
+  ```
+- Entrada con `cin`:
+  ```cpp
+  int edad;
+  cin >> edad;
+  ```
+
+## Tipos de datos definidos por el usuario
+
+- `typedef`: Para crear alias de tipos existentes
+  ```cpp
+  typedef unsigned long ulong;
+  ```
+
+# Capítulo 3: Operadores y Expresiones
+
+## Operadores aritméticos
+
+- Suma (`+`)
+- Resta (`-`)
+- Multiplicación (`*`)
+- División (`/`)
+- Módulo (`%`)
+- Incremento (`++`)
+- Decremento (`--`)
+
+Ejemplos:
+```cpp
+int a = 5, b = 2;
+int suma = a + b;  // 7
+int resta = a - b;  // 3
+int multiplicacion = a * b;  // 10
+int division = a / b;  // 2
+int modulo = a % b;  // 1
+a++;  // a ahora es 6
+b--;  // b ahora es 1
+```
+
+## Operadores de comparación
+
+- Igual a (`==`)
+- Diferente de (`!=`)
+- Mayor que (`>`)
+- Menor que (`<`)
+- Mayor o igual que (`>=`)
+- Menor o igual que (`<=`)
+
+Ejemplos:
+```cpp
+bool esIgual = (5 == 5);  // true
+bool esDiferente = (5 != 3);  // true
+bool esMayor = (5 > 3);  // true
+bool esMenor = (5 < 10);  // true
+```
+
+## Operadores lógicos
+
+- AND lógico (`&&`)
+- OR lógico (`||`)
+- NOT lógico (`!`)
+
+Ejemplos:
+```cpp
+bool condicion1 = true, condicion2 = false;
+bool resultadoAND = condicion1 && condicion2;  // false
+bool resultadoOR = condicion1 || condicion2;  // true
+bool resultadoNOT = !condicion1;  // false
+```
+
+## Operadores de asignación
+
+- Asignación simple (`=`)
+- Asignación con suma (`+=`)
+- Asignación con resta (`-=`)
+- Asignación con multiplicación (`*=`)
+- Asignación con división (`/=`)
+- Asignación con módulo (`%=`)
+
+Ejemplos:
+```cpp
+int x = 10;
+x += 5;  // x ahora es 15
+x -= 3;  // x ahora es 12
+x *= 2;  // x ahora es 24
+x /= 4;  // x ahora es 6
+x %= 4;  // x ahora es 2
+```
+
+## Operadores a nivel de bits
+
+- AND a nivel de bits (`&`)
+- OR a nivel de bits (`|`)
+- XOR a nivel de bits (`^`)
+- Complemento a uno (`~`)
+- Desplazamiento a la izquierda (`<<`)
+- Desplazamiento a la derecha (`>>`)
+
+Ejemplos:
+```cpp
+int a = 5, b = 3;
+int resultadoAND = a & b;  // 1
+int resultadoOR = a | b;  // 7
+int resultadoXOR = a ^ b;  // 6
+int resultadoComplemento = ~a;  // -6
+int desplazamientoIzquierda = a << 1;  // 10
+int desplazamientoDerecha = a >> 1;  // 2
+```
+
+## Precedencia y asociatividad de operadores
+
+La precedencia determina el orden en que se evalúan los operadores en una expresión. La asociatividad determina el orden de evaluación cuando hay operadores con la misma precedencia.
+
+Ejemplo de precedencia:
+```cpp
+int resultado = 5 + 3 * 2;  // 11, no 16
+```
+
+## Expresiones y evaluación
+
+Una expresión es una combinación de operadores y operandos que se evalúa para producir un valor.
+
+Ejemplo:
+```cpp
+int x = 5, y = 3;
+int z = (x + y) * 2 - 1;  // 15
+```
+
+## Conversión de tipos en expresiones
+
+C++ realiza conversiones implícitas en expresiones que involucran diferentes tipos de datos.
+
+Ejemplo:
+```cpp
+int entero = 5;
+double decimal = 2.5;
+double resultado = entero + decimal;  // 7.5
+```
+
+# Capítulo 4: Estructuras de Control
+
+## Estructuras de decisión
+
+### 1. if-else
+```cpp
+if (condición) {
+    // código si la condición es verdadera
+} else {
+    // código si la condición es falsa
+}
+```
+
+### 2. if-else if-else
+```cpp
+if (condición1) {
+    // código si condición1 es verdadera
+} else if (condición2) {
+    // código si condición2 es verdadera
+} else {
+    // código si ninguna condición es verdadera
+}
+```
+
+### 3. switch
+```cpp
+switch (expresión) {
+    case valor1:
+        // código para valor1
+        break;
+    case valor2:
+        // código para valor2
+        break;
+    default:
+        // código si no hay coincidencia
+}
+```
+
+## Estructuras de iteración (bucles)
+
+### 1. for
+```cpp
+for (inicialización; condición; incremento) {
+    // código a repetir
+}
+```
+
+### 2. while
+```cpp
+while (condición) {
+    // código a repetir mientras la condición sea verdadera
+}
+```
+
+### 3. do-while
+```cpp
+do {
+    // código a ejecutar al menos una vez
+} while (condición);
+```
+
+## Sentencias de salto
+
+### 1. break
+Se usa para salir inmediatamente de un bucle o un switch.
+
+### 2. continue
+Se usa para saltar el resto de la iteración actual y continuar con la siguiente.
+
+### 3. goto
+Permite saltar a una etiqueta específica en el código (generalmente se desaconseja su uso).
+
+## Operador condicional (ternario)
+```cpp
+resultado = (condición) ? valor_si_verdadero : valor_si_falso;
+```
+
+## Anidación de estructuras de control
+
+Es posible anidar estructuras de control dentro de otras, por ejemplo:
+```cpp
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        // código para números pares
+    } else {
+        // código para números impares
+    }
+}
+```
+
+## Buenas prácticas
+
+1. Usar llaves {} incluso para bloques de una sola línea.
+2. Mantener la indentación adecuada para mejorar la legibilidad.
+3. Evitar anidaciones excesivas que dificulten la comprensión del código.
+4. Preferir for cuando se conoce el número de iteraciones, while para condiciones más generales.
+5. Usar switch cuando se compara una variable contra múltiples valores constantes.
+
+# Capítulo 5: Funciones
+
+## Definición y declaración de funciones
+- Sintaxis completa:
+  ```cpp
+  tipo_retorno nombre_funcion(tipo_param1 param1, tipo_param2 param2, ...) {
+      // cuerpo de la función
+      return valor;
+  }
+  ```
+- Declaración (prototipo):
+  ```cpp
+  tipo_retorno nombre_funcion(tipo_param1, tipo_param2, ...);
+  ```
+- Ejemplo de función sin retorno:
+  ```cpp
+  void saludar(std::string nombre) {
+      std::cout << "Hola, " << nombre << "!" << std::endl;
+  }
+  ```
+
+## Parámetros y argumentos
+- Paso por valor: se copia el valor del argumento.
+  ```cpp
+  void duplicar(int x) {
+      x = x * 2;
+  }
+  ```
+- Paso por referencia: se pasa la dirección de memoria del argumento.
+  ```cpp
+  void duplicar(int& x) {
+      x = x * 2;
+  }
+  ```
+- Parámetros por defecto:
+  ```cpp
+  void imprimir(std::string mensaje, int veces = 1) {
+      for(int i = 0; i < veces; i++) {
+          std::cout << mensaje << std::endl;
+      }
+  }
+  ```
+- Listas de parámetros variables (C++11):
+  ```cpp
+  template<typename... Args>
+  void imprimir(Args... args) {
+      (std::cout << ... << args) << std::endl;
+  }
+  ```
+
+## Sobrecarga de funciones
+```cpp
+int suma(int a, int b) { return a + b; }
+double suma(double a, double b) { return a + b; }
+```
+
+## Funciones inline
+```cpp
+inline int cuadrado(int x) { return x * x; }
+```
+
+## Funciones recursivas
+```cpp
+int factorial(int n) {
+    if (n <= 1) return 1;  // caso base
+    return n * factorial(n - 1);  // caso recursivo
+}
+```
+
+## Ámbito y duración de las variables
+- Variable global:
+  ```cpp
+  int contador = 0;  // variable global
+  void incrementar() {
+      contador++;
+  }
+  ```
+- Variable estática en función:
+  ```cpp
+  void contar() {
+      static int llamadas = 0;
+      llamadas++;
+      std::cout << "Llamada número: " << llamadas << std::endl;
+  }
+  ```
+
+## Punteros a funciones
+```cpp
+int (*puntero_funcion)(int, int);
+puntero_funcion = suma;
+int resultado = puntero_funcion(5, 3);
+```
+
+## Funciones lambda
+```cpp
+auto multiplicar = [](int a, int b) { return a * b; };
+std::cout << multiplicar(4, 5) << std::endl;  // Imprime 20
+
+int factor = 2;
+auto multiplicar_por_factor = [factor](int x) { return x * factor; };
+std::cout << multiplicar_por_factor(5) << std::endl;  // Imprime 10
+```
+
+# Capítulo 6: Arrays y Strings
+
+## Arrays
+1. Definición y declaración:
+   ```cpp
+   int numeros[5];  // Array de 5 enteros
+   int numeros[] = {1, 2, 3, 4, 5};  // Inicialización
+   ```
+
+2. Acceso a elementos:
+   ```cpp
+   numeros[0] = 10;  // Asignar valor
+   int primero = numeros[0];  // Obtener valor
+   ```
+
+3. Arrays multidimensionales:
+   ```cpp
+   int matriz[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+   ```
+
+4. Tamaño de arrays:
+   ```cpp
+   int tamano = sizeof(numeros) / sizeof(numeros[0]);
+   ```
+
+## Strings
+1. C-style strings:
+   ```cpp
+   char nombre[20] = "Juan";
+   ```
+
+2. std::string (C++ string):
+   ```cpp
+   #include <string>
+   std::string nombre = "María";
+   ```
+
+3. Operaciones con std::string:
+   ```cpp
+   string s1 = "Hola";
+   string s2 = "Mundo";
+   string s3 = s1 + " " + s2;  // Concatenación
+   int longitud = s3.length();  // Longitud
+   ```
+
+4. Métodos de std::string:
+   ```cpp
+   string s = "ejemplo";
+   s.substr(1, 3);  // "jem"
+   s.find("mp");    // Retorna 3
+   s.replace(1, 2, "ABC");  // "eABCmplo"
+   ```
+
+## Arrays de caracteres vs std::string
+- Comparación de eficiencia y facilidad de uso
+- Conversión entre ambos tipos
+
+## Algoritmos comunes con arrays
+1. Búsqueda lineal
+2. Búsqueda binaria (en arrays ordenados)
+3. Ordenamiento (bubble sort, selection sort)
+
+## std::array (C++11)
+```cpp
+#include <array>
+std::array<int, 5> arr = {1, 2, 3, 4, 5};
+```
+
+## Punteros y arrays
+- Relación entre punteros y arrays
+- Aritmética de punteros
+
+## std::vector
+```cpp
+#include <vector>
+std::vector<int> vec = {1, 2, 3, 4, 5};
+vec.push_back(6);  // Añadir elemento
+```
+
+## Paso de arrays a funciones
+```cpp
+void procesarArray(int arr[], int tamano);
+void procesarVector(std::vector<int>& vec);
+```
+
+## Manejo de errores comunes
+- Desbordamiento de buffer
+- Acceso fuera de límites
+
+# Capítulo 7: Punteros y Referencias
+
+## Punteros
+1. Definición y declaración:
+   ```cpp
+   int* ptr;  // Puntero a int
+   int valor = 5;
+   ptr = &valor;  // ptr ahora apunta a valor
+   ```
+
+2. Desreferenciación:
+   ```cpp
+   *ptr = 10;  // Cambia el valor de 'valor' a 10
+   ```
+
+3. Punteros nulos:
+   ```cpp
+   int* ptr = nullptr;  // C++11
+   ```
+
+4. Aritmética de punteros:
+   ```cpp
+   int arr[] = {1, 2, 3, 4, 5};
+   int* p = arr;
+   p++;  // Ahora apunta al segundo elemento
+   ```
+
+## Referencias
+1. Definición y uso:
+   ```cpp
+   int x = 5;
+   int& ref = x;  // ref es una referencia a x
+   ref = 10;  // x ahora vale 10
+   ```
+
+2. Referencias vs Punteros:
+   - Las referencias no pueden ser nulas
+   - Las referencias no pueden ser reasignadas
+
+## Punteros a funciones
+```cpp
+int suma(int a, int b) { return a + b; }
+int (*ptr_func)(int, int) = suma;
+int resultado = ptr_func(3, 4);  // resultado = 7
+```
+
+## Punteros void
+```cpp
+void* ptr_generico;
+int x = 5;
+ptr_generico = &x;
+```
+
+## Punteros a punteros
+```cpp
+int x = 5;
+int* ptr = &x;
+int** ptr_ptr = &ptr;
+```
+
+## Gestión dinámica de memoria
+1. new y delete:
+   ```cpp
+   int* p = new int;
+   *p = 10;
+   delete p;
+   ```
+
+2. Arrays dinámicos:
+   ```cpp
+   int* arr = new int[5];
+   // ... usar arr ...
+   delete[] arr;
+   ```
+
+## Referencias a const
+```cpp
+const int& ref = valor;  // No se puede modificar a través de ref
+```
+
+## Punteros a const y const punteros
+```cpp
+const int* ptr1;  // Puntero a const int
+int* const ptr2 = &valor;  // Const puntero a int
+```
+
+## Smart pointers (C++11)
+1. unique_ptr:
+   ```cpp
+   #include <memory>
+   std::unique_ptr<int> ptr(new int(10));
+   ```
+
+2. shared_ptr:
+   ```cpp
+   std::shared_ptr<int> ptr1 = std::make_shared<int>(20);
+   std::shared_ptr<int> ptr2 = ptr1;
+   ```
+
+3. weak_ptr:
+   ```cpp
+   std::weak_ptr<int> weak = ptr1;
+   ```
+
+## Problemas comunes y buenas prácticas
+- Punteros colgantes (dangling pointers)
+- Fugas de memoria
+- Uso de smart pointers para gestión automática de memoria
+
+# Capítulo 8: Estructuras y Clases
+
+## Estructuras
+1. Definición y declaración:
+   ```cpp
+   struct Persona {
+       string nombre;
+       int edad;
+   };
+   
+   Persona p1 = {"Juan", 25};
+   ```
+
+2. Acceso a miembros:
+   ```cpp
+   p1.nombre = "María";
+   cout << p1.edad;
+   ```
+
+## Clases
+1. Definición básica:
+   ```cpp
+   class Rectangulo {
+   private:
+       int ancho, alto;
+   public:
+       void setDimensiones(int w, int h) {
+           ancho = w;
+           alto = h;
+       }
+       int area() { return ancho * alto; }
+   };
+   ```
+
+2. Constructores y destructores:
+   ```cpp
+   class Persona {
+   public:
+       Persona(string n, int e) : nombre(n), edad(e) {}
+       ~Persona() { cout << "Destructor llamado"; }
+   private:
+       string nombre;
+       int edad;
+   };
+   ```
+
+3. Miembros estáticos:
+   ```cpp
+   class Contador {
+   public:
+       static int getConteo() { return conteo; }
+   private:
+       static int conteo;
+   };
+   int Contador::conteo = 0;
+   ```
+
+4. Funciones amigas:
+   ```cpp
+   class Circulo {
+       friend void imprimirRadio(const Circulo& c);
+   private:
+       int radio;
+   };
+   ```
+
+## Encapsulamiento
+- Uso de public, private y protected
+- Getters y setters
+
+## Herencia
+```cpp
+class Animal {
+public:
+    void comer() { cout << "Animal comiendo"; }
+};
+
+class Perro : public Animal {
+public:
+    void ladrar() { cout << "Guau"; }
+};
+```
+
+## Polimorfismo
+1. Funciones virtuales:
+   ```cpp
+   class Animal {
+   public:
+       virtual void hacerSonido() { cout << "..."; }
+   };
+   
+   class Perro : public Animal {
+   public:
+       void hacerSonido() override { cout << "Guau"; }
+   };
+   ```
+
+2. Clases abstractas:
+   ```cpp
+   class Figura {
+   public:
+       virtual double area() = 0;  // Función virtual pura
+   };
+   ```
+
+## Sobrecarga de operadores
+```cpp
+class Complejo {
+public:
+    Complejo operator+(const Complejo& otro) {
+        // Implementación de la suma
+    }
+};
+```
+
+## Composición vs Herencia
+- Cuándo usar cada una
+- Ventajas y desventajas
+
+## Inicialización de miembros
+```cpp
+class Ejemplo {
+    int a;
+    string b;
+public:
+    Ejemplo(int x, string y) : a(x), b(y) {}
+};
+```
+
+## Const correctness
+- Métodos const
+- Objetos const
+
+# Capítulo 9: Sobrecarga de Operadores
+
+## Conceptos básicos
+- Definición de sobrecarga de operadores
+- Operadores que se pueden sobrecargar
+- Operadores que no se pueden sobrecargar (::, ., .*, ?:)
+
+## Sintaxis general
+```cpp
+tipo_retorno operator símbolo_operador (parámetros) {
+    // Implementación
+}
+```
+
+## Sobrecarga como método de clase
+```cpp
+class Complejo {
+public:
+    Complejo operator+(const Complejo& otro) const {
+        return Complejo(real + otro.real, imag + otro.imag);
+    }
+private:
+    double real, imag;
+};
+```
+
+## Sobrecarga como función global
+```cpp
+Complejo operator-(const Complejo& a, const Complejo& b) {
+    return Complejo(a.getReal() - b.getReal(), a.getImag() - b.getImag());
+}
+```
+
+## Operadores unarios
+```cpp
+class Contador {
+public:
+    Contador& operator++() {  // Prefijo
+        ++valor;
+        return *this;
+    }
+    Contador operator++(int) {  // Postfijo
+        Contador temp = *this;
+        ++(*this);
+        return temp;
+    }
+private:
+    int valor;
+};
+```
+
+## Operadores binarios
+```cpp
+class Vector {
+public:
+    Vector operator*(double escalar) const {
+        return Vector(x * escalar, y * escalar);
+    }
+private:
+    double x, y;
+};
+```
+
+## Operador de asignación
+```cpp
+class MiClase {
+public:
+    MiClase& operator=(const MiClase& otro) {
+        if (this != &otro) {
+            // Implementación de la asignación
+        }
+        return *this;
+    }
+};
+```
+
+## Operadores de comparación
+```cpp
+bool operator==(const MiClase& a, const MiClase& b) {
+    // Implementación de la comparación
+}
+```
+
+## Operadores de entrada/salida
+```cpp
+ostream& operator<<(ostream& os, const MiClase& obj) {
+    // Implementación para imprimir obj
+    return os;
+}
+
+istream& operator>>(istream& is, MiClase& obj) {
+    // Implementación para leer en obj
+    return is;
+}
+```
+
+## Operador de conversión
+```cpp
+class Fraccion {
+public:
+    operator double() const {
+        return (double)numerador / denominador;
+    }
+private:
+    int numerador, denominador;
+};
+```
+
+## Operador de llamada a función
+```cpp
+class Functor {
+public:
+    int operator()(int x) {
+        return x * x;
+    }
+};
+```
+
+## Operadores de acceso a miembros
+```cpp
+class PunteroInteligente {
+public:
+    T* operator->() {
+        return ptr;
+    }
+private:
+    T* ptr;
+};
+```
+
+## Buenas prácticas
+- Mantener el significado intuitivo de los operadores
+- Considerar la eficiencia en las implementaciones
+- Mantener la consistencia con los tipos integrados
+
+# Capítulo 10: Plantillas (Templates)
+
+## 1. Introducción a las plantillas
+Las plantillas son una característica de C++ que permite escribir código genérico. La programación genérica se refiere a escribir código que funciona con diferentes tipos de datos sin necesidad de reescribirlo. Las principales ventajas de las plantillas son:
+- Reutilización de código
+- Flexibilidad en tipos de datos
+- Optimización en tiempo de compilación
+
+## 2. Plantillas de funciones
+Una plantilla de función permite definir una función que puede trabajar con diferentes tipos de datos. La sintaxis básica es:
+
+```cpp
+template <typename T>
+T funcionPlantilla(T parametro) {
+    // Cuerpo de la función
+}
+```
+
+Ejemplo:
+```cpp
+template <typename T>
+T maximo(T a, T b) {
+    return (a > b) ? a : b;
+}
+```
+
+La instanciación puede ser implícita (el compilador deduce el tipo) o explícita:
+```cpp
+int resultado = maximo(5, 10);  // Implícita
+double d = maximo<double>(3.14, 2.71);  // Explícita
+```
+
+## 3. Plantillas de clases
+Las plantillas de clases permiten definir una clase que puede trabajar con diferentes tipos. Sintaxis:
+
+```cpp
+template <typename T>
+class ClasePlantilla {
+public:
+    T miembro;
+    // Métodos y otros miembros
+};
+```
+
+Ejemplo:
+```cpp
+template <typename T>
+class Contenedor {
+private:
+    T elemento;
+public:
+    void setElemento(T nuevoElemento) {
+        elemento = nuevoElemento;
+    }
+    T getElemento() {
+        return elemento;
+    }
+};
+```
+
+## 4. Parámetros de plantilla
+- Tipos: Como se mostró anteriormente con `typename T`.
+- Valores no tipo: Pueden ser enteros, punteros, etc.
+  ```cpp
+  template <typename T, int N>
+  class Array {
+      T datos[N];
+  };
+  ```
+- Plantillas como parámetros:
+  ```cpp
+  template <template <typename> class Contenedor, typename T>
+  class MiClase {
+      Contenedor<T> contenedor;
+  };
+  ```
+
+## 5. Especialización de plantillas
+- Especialización total: Proporciona una implementación específica para un tipo particular.
+  ```cpp
+  template <>
+  class Contenedor<bool> {
+      // Implementación especializada para bool
+  };
+  ```
+- Especialización parcial: Especializa solo algunos parámetros de la plantilla.
+
+## 6. Plantillas variádicas (C++11 en adelante)
+Permiten un número variable de parámetros de plantilla.
+```cpp
+template <typename... Args>
+void funcionVariadica(Args... args) {
+    // Implementación
+}
+```
+
+## 7. Metaprogramación con plantillas
+Uso de plantillas para realizar cálculos en tiempo de compilación.
+Ejemplo: Cálculo del factorial en tiempo de compilación.
+```cpp
+template <int N>
+struct Factorial {
+    static const int valor = N * Factorial<N-1>::valor;
+};
+
+template <>
+struct Factorial<0> {
+    static const int valor = 1;
+};
+```
+
+## 8. Restricciones y conceptos (C++20)
+Los conceptos permiten especificar restricciones en los parámetros de plantilla.
+```cpp
+template <typename T>
+concept Numerico = std::is_arithmetic_v<T>;
+
+template <Numerico T>
+T suma(T a, T b) {
+    return a + b;
+}
+```
+
+## 9. Buenas prácticas con plantillas
+- Usar cuando se necesite flexibilidad de tipos
+- Considerar el impacto en el tiempo de compilación
+- Proporcionar mensajes de error claros
+
+## 10. Bibliotecas estándar basadas en plantillas
+La STL (Standard Template Library) es un ejemplo prominente:
+- Contenedores: vector, list, map, etc.
+- Algoritmos: sort, find, etc.
+
+```cpp
+std::vector<int> numeros = {1, 2, 3, 4, 5};
+std::sort(numeros.begin(), numeros.end());
+```
+
+# Capítulo 11: Manejo de Excepciones
+
+## 1. Introducción al manejo de excepciones
+El manejo de excepciones es una técnica para manejar errores y situaciones inesperadas en el programa. Permite separar el código de manejo de errores del flujo normal del programa.
+
+## 2. Sintaxis básica
+```cpp
+try {
+    // Código que puede lanzar una excepción
+} catch (TipoExcepcion& e) {
+    // Manejo de la excepción
+}
+```
+
+## 3. Lanzamiento de excepciones
+Se utiliza la palabra clave `throw`:
+```cpp
+if (condicion_error) {
+    throw MiExcepcion("Mensaje de error");
+}
+```
+
+## 4. Tipos de excepciones
+- Excepciones estándar de C++: `std::exception`, `std::runtime_error`, etc.
+- Excepciones personalizadas:
+  ```cpp
+  class MiExcepcion : public std::exception {
+  public:
+      const char* what() const noexcept override {
+          return "Mi excepción personalizada";
+      }
+  };
+  ```
+
+## 5. Captura de múltiples excepciones
+```cpp
+try {
+    // Código
+} catch (const std::runtime_error& e) {
+    // Manejo de runtime_error
+} catch (const std::exception& e) {
+    // Manejo de otras excepciones estándar
+} catch (...) {
+    // Captura cualquier otra excepción
+}
+```
+
+## 6. Relanzamiento de excepciones
+```cpp
+try {
+    // Código
+} catch (const std::exception& e) {
+    // Hacer algo
+    throw; // Relanza la excepción actual
+}
+```
+
+## 7. Especificación de excepciones (C++17 y anteriores)
+```cpp
+void funcion() throw(std::exception, std::runtime_error);
+```
+Nota: Obsoleto en C++17 y eliminado en C++20.
+
+## 8. noexcept
+Especifica que una función no lanzará excepciones:
+```cpp
+void funcionSegura() noexcept {
+    // Código que no lanza excepciones
+}
+```
+
+## 9. Destrucción de objetos durante el desenrollado de la pila
+Los destructores se llaman automáticamente cuando se lanza una excepción, asegurando la liberación de recursos.
+
+## 10. Buenas prácticas
+- Usar excepciones para errores excepcionales, no para flujo de control normal.
+- Capturar excepciones por referencia.
+- Mantener las secciones `try` lo más pequeñas posible.
+- Documentar las excepciones que puede lanzar una función.
+
+## 11. Excepciones y rendimiento
+- El costo de rendimiento es mínimo si no se lanzan excepciones.
+- El lanzamiento de excepciones puede ser costoso debido al desenrollado de la pila.
+
+## 12. Alternativas al manejo de excepciones
+- Códigos de error
+- Objetos `std::optional` (C++17)
+- Objetos `std::expected` (propuesto para futuras versiones de C++)
+
+## 13. Manejo de excepciones en constructores y destructores
+- Los constructores pueden lanzar excepciones para indicar fallos en la inicialización.
+- Los destructores no deberían lanzar excepciones (usar `noexcept`).
+
+## 14. Excepciones en la STL
+La mayoría de las funciones de la STL pueden lanzar excepciones, como `std::bad_alloc` para fallos de asignación de memoria.
